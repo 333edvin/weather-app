@@ -1,38 +1,142 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+body{
   color: white;
+  /* transition: ease; */
+  font-family: 'Poppins', sans-serif;
+ 
+}
+@keyframes fadeBackground {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
-.App-link {
-  color: #61dafb;
+.fade-in-out {
+  animation: fadeBackground 0.5s ease-in-out forwards;
+}
+.card{
+  width: 500px;
+  height: auto;
+  padding: 35px;
+  backdrop-filter: blur(9px) saturate(64%);
+  -webkit-backdrop-filter: blur(9px) saturate(64%);
+  background-color: rgba(165, 165, 165, 0.425);
+  border-radius: 12px;
+  border: 3px solid rgba(255, 255, 255, 0.199);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.card input::placeholder{
+  color: rgba(250, 250, 250, 0.877);
+}
+.card input{
+  background-color: rgba(211, 211, 211, 0.473);
+  color: white;
+  border-radius: 30px 0 0 30px;
+}
+
+.card button{
+  backdrop-filter: blur(5px) saturate(113%);
+  -webkit-backdrop-filter: blur(14px) saturate(113%);
+  background-color: rgba(24, 34, 53, 0.4);
+  border-radius: 0 30px 30px 0;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  
+}
+.starting-page{
+  font-size: 40px;
+  margin-top:80px;
+}
+
+.temp{
+  font-size: 5rem;
+  font-weight: bold;
+  color: rgba(240, 240, 240, 0.904);
+  text-shadow: -2px -2px 40px rgba(0, 0, 0, 0.479);;
+}
+
+
+.col{
+  background-color: rgba(207, 207, 207, 0.281);
+  box-shadow: 5px 5px 20px rgba(104, 104, 104, 0.445),
+  inset -5px -5px 20px rgba(201, 201, 201, 0.295);
+}
+
+
+.custom-alert {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #72727281;
+  color: #ffffff;
+  width:50vh;
+  height: 20vh;
+  padding: 15px;
+  border: 1px solid #a3a3a3;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+/* Styling for the overlay background */
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(5px);
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.icons-page img{
+  width: 50px;
+  box-shadow: 5px 5px 10px rgba(97, 97, 97, 0.493);
+  border-radius: 30px;
+
+}
+.icons-page{
+  backdrop-filter: blur(5px) saturate(64%);
+  -webkit-backdrop-filter: blur(9px) saturate(64%);
+  background-color: rgba(228, 228, 228, 0.644);
+  border-radius: 12px;
+}
+
+
+
+@media only screen and (max-width: 600px){
+  .starting-page{
+    font-size: 20px;
+    margin-top: 100px;
   }
-  to {
-    transform: rotate(360deg);
+ 
+  .icons-page img{
+    width: 35px;
+    box-shadow: 5px 5px 10px rgba(97, 97, 97, 0.493);
+    border-radius: 30px;
+  
+  }
+  .temp{
+    font-size: 4rem;
+    font-weight: bold;
+    color: rgba(240, 240, 240, 0.904);
+    text-shadow: -2px -2px 40px rgba(0, 0, 0, 0.479);;
+  }
+  .temp-content{
+    font-size: 13px;
+  }
+  .col p{
+    font-size: 15px;
+  }
+  .card{
+    width: 500px;
+    height: 600px;
   }
 }
